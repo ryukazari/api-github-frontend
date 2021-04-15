@@ -8,9 +8,9 @@ import { ISearchUser } from '../../models/searchuser';
 import './Home.scss';
 import { values, size } from 'lodash';
 import { toast } from 'react-toastify';
-import { searchUser } from '../../api/api-github';
+import { searchUser, setUser } from '../../api/api-github';
+import { IGithubUser } from './../../models/githubuser';
 
-// import { Container } from './styles';
 interface IProps{
     setRefreshPage: (bool: boolean) => void;
 }
@@ -21,7 +21,7 @@ const Home = (props: IProps) => {
     <Container className="home" fluid>
         <Row>
             <LeftSide/>
-            <RightSide setRefreshPage={setRefreshPage} />
+            <RightSide setRefreshPage={setRefreshPage}/>
             
         </Row>
     </Container>
@@ -76,6 +76,7 @@ const RightSide = (props: IProps) => {
                 if (result.status !== 200){
                     toast.warning(result.data.message)
                 } else {
+                    setUser(result.data);
                     setRefreshPage(true);
                 }
             })
