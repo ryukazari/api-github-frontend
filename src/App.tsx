@@ -22,7 +22,6 @@ export default function App() {
   const [userSearched, setUserSearched] = useState(initUserSearched())
   const [refreshPage, setRefreshPage] = useState(false);
   useEffect(() => {
-    console.log("getUser(): ", getUser());
     setUserSearched(getUser());
     setRefreshPage(false);
   }, [refreshPage])

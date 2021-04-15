@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCode, faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 import { getUser, setUser } from '../../api/api-github';
 import { IGithubUser } from '../../models/githubuser'
+import HookUser from '../../hooks/user'
 import './LeftMenu.scss';
 
 
@@ -21,7 +22,7 @@ const defaultUser: IGithubUser = {
 }
 const LeftMenu = (props: IProps) => {
     const { setRefreshPage, user } = props;
-
+    const userStored = HookUser();
     const logout = () => {
         setUser(defaultUser);
         setRefreshPage(true);
@@ -29,11 +30,11 @@ const LeftMenu = (props: IProps) => {
     
   return (
     <div className='left-menu'>
-        <img className='logo' src={user.avatar_url} alt='userImage'/>
+        <img className='logo' src={user ? user.avatar_url : userStored.avatar_url} alt='userImage'/>
         <Link to='/'> 
             <FontAwesomeIcon icon={faHome} /> Inicio
         </Link>
-        <Link to='/projects'> 
+        <Link to='/repositories'> 
             <FontAwesomeIcon icon={faCode} /> Repositorios
         </Link>
         <Link to='' onClick={logout} > 

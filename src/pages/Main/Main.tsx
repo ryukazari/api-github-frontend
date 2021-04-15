@@ -20,7 +20,7 @@ const Main = (props: IProps) => {
             <Col>
               <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                  <InputGroup.Text id="basic-addon1"><FontAwesomeIcon icon={faUser} /></InputGroup.Text>
+                  <InputGroup.Text id="basic-addon1"><FontAwesomeIcon icon={faUser} />  Nombre de usuario</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
                   placeholder="Username"
@@ -36,7 +36,7 @@ const Main = (props: IProps) => {
             <Col>
               <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                  <InputGroup.Text id="basic-addon1"><FontAwesomeIcon icon={faCalendar} /></InputGroup.Text>
+                  <InputGroup.Text id="basic-addon1"><FontAwesomeIcon icon={faCalendar} />  Fecha de creación</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
                   placeholder="Username"
