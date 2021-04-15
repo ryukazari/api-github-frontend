@@ -11,7 +11,7 @@ Tecnologías
 * [TypeScript](https://www.typescriptlang.org/)
 
 ----------------------------------------
-Commands para ejecutar:
+Comandos para ejecutar:
 ----------------------------------------
 - `yarn install` - correr para instalar todas las dependencias del proyecto` 
 - `yarn start` - correr para iniciar el proyecto (defecto: localhost:3000)` 
