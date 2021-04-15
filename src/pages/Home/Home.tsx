@@ -8,7 +8,7 @@ import { ISearchUser } from '../../models/searchuser';
 import './Home.scss';
 import { values, size } from 'lodash';
 import { toast } from 'react-toastify';
-import { searchUser, setUser } from '../../api/api-github';
+import { searchUser, setUser, getUser } from '../../api/api-github';
 import { IGithubUser } from './../../models/githubuser';
 
 interface IProps{
